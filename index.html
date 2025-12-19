@@ -2,79 +2,42 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Bizbooks Solutions | Hiring Form</title>
+<title>Bizbooks Solutions | Hiring Application</title>
 
 <style>
-body{
-  font-family: Arial, sans-serif;
-  background:#f5f7fa;
-}
-.container{
-  max-width:1000px;
-  margin:auto;
-  background:#fff;
-  padding:30px;
-  border-radius:8px;
-}
-h2,h3{
-  text-align:center;
-}
-.section{
-  margin-top:30px;
-}
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-label{
-  font-weight:bold;
-}
-.req{
-  color:red;
-}
-input,select,textarea{
-  width:100%;
-  padding:8px;
-  margin-top:5px;
-}
-textarea{resize:vertical;}
-.hidden{display:none;}
-button{
-  width:100%;
-  padding:14px;
-  background:#1a73e8;
-  color:#fff;
-  font-size:16px;
-  border:none;
-  border-radius:5px;
-  margin-top:30px;
-}
-@media(max-width:768px){
-  .grid{grid-template-columns:1fr;}
-}
+body{font-family:Arial;background:#f4f6f9}
+.container{max-width:1100px;margin:auto;background:#fff;padding:30px;border-radius:8px}
+h2,h3{text-align:center}
+.section{margin-top:30px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+label{font-weight:bold}
+.req{color:red}
+input,select,textarea{width:100%;padding:8px;margin-top:5px}
+textarea{resize:vertical}
+.hidden{display:none}
+button{margin-top:30px;width:100%;padding:14px;background:#1a73e8;color:#fff;border:none;font-size:16px;border-radius:6px}
+.notice{background:#ffe6e6;padding:10px;border-radius:5px;color:#b30000}
+@media(max-width:768px){.grid{grid-template-columns:1fr}}
 </style>
+
 </head>
-
 <body>
-<div class="container">
 
+<div class="container">
 <h2>Bizbooks Solutions Private Limited</h2>
 <h3>Candidate Hiring Application Form</h3>
 
 <form id="jobForm">
 
-<!-- BASIC DETAILS -->
-<div class="section">
-<div class="grid">
-
+<!-- APPLICATION TYPE -->
+<div class="section grid">
 <div>
 <label>Application Type <span class="req">*</span></label>
-<select name="applicationType" required>
-<option>India Application</option>
-<option>Canada Application</option>
-<option>US Application</option>
-<option>Other Application</option>
+<select id="applicationType" name="applicationType" required>
+<option value="">-- Select --</option>
+<option value="US">US Application</option>
+<option value="CANADA">Canada Application</option>
+<option value="OTHER">Other / India Application</option>
 </select>
 </div>
 
@@ -92,19 +55,18 @@ button{
 <label>Contact Number <span class="req">*</span></label>
 <input type="text" name="contact" required>
 </div>
+</div>
 
+<!-- PERSONAL -->
+<div class="section grid">
 <div>
 <label>Gender</label>
-<select name="gender">
-<option>Male</option><option>Female</option><option>Other</option>
-</select>
+<select name="gender"><option>Male</option><option>Female</option><option>Other</option></select>
 </div>
 
 <div>
 <label>Marital Status</label>
-<select name="maritalStatus">
-<option>Single</option><option>Married</option>
-</select>
+<select name="maritalStatus"><option>Single</option><option>Married</option></select>
 </div>
 
 <div>
@@ -116,50 +78,38 @@ button{
 <label>Qualifications</label>
 <input type="text" name="qualifications">
 </div>
-
-</div>
 </div>
 
 <!-- ADDRESS -->
-<div class="section">
-<div class="grid">
-
+<div class="section grid">
 <div>
 <label>Current Address (Search)</label>
 <input type="text" name="currentAddress" placeholder="Start typing address">
 </div>
 
 <div>
-<label>Relocate to Mohali?</label>
-<select name="relocateMohali">
-<option>No</option><option>Yes</option>
-</select>
+<label>Can relocate to Mohali?</label>
+<select name="relocateMohali"><option>No</option><option>Yes</option></select>
 </div>
 
 <div>
 <label>Permanent Address (Search)</label>
-<input type="text" name="permanentAddress" placeholder="Start typing address">
+<input type="text" name="permanentAddress">
 </div>
 
 <div>
 <label>Own Vehicle?</label>
-<select name="ownVehicle" id="ownVehicle">
-<option>No</option><option>Yes</option>
-</select>
+<select id="ownVehicle" name="ownVehicle"><option>No</option><option>Yes</option></select>
 </div>
 
 <div id="vehicleDiv" class="hidden">
 <label>Vehicle Type</label>
 <input type="text" name="vehicleType">
 </div>
-
-</div>
 </div>
 
 <!-- ROLE -->
-<div class="section">
-<div class="grid">
-
+<div class="section grid">
 <div>
 <label>Current Role</label>
 <input type="text" name="currentRole">
@@ -172,7 +122,7 @@ button{
 
 <div>
 <label>Total Experience Years <span class="req">*</span></label>
-<select name="totalExperience" id="experience" required>
+<select id="experience" name="totalExperience" required>
 <option>Fresher</option>
 <option>&lt; 1 year</option>
 <option>2–4 years</option>
@@ -180,109 +130,109 @@ button{
 <option>7+ years</option>
 </select>
 </div>
-
-</div>
 </div>
 
-<!-- EXPERIENCED -->
-<div id="experiencedSection" class="section hidden">
+<!-- US ELIGIBILITY -->
+<div id="usSection" class="section hidden">
+<div class="notice">
+<strong>US Application Eligibility</strong><br>
+Minimum 3 years US accounting & taxation experience required.
+</div>
+
 <div class="grid">
+<div>
+<label>Years of US Experience <span class="req">*</span></label>
+<input type="number" id="usYears" min="0">
+</div>
 
 <div>
-<label>Employment Status</label>
-<select name="employmentStatus">
-<option>Employed</option>
-<option>Unemployed</option>
-<option>Self-employed</option>
-</select>
+<label>US Accounting Tools (Search) <span class="req">*</span></label>
+<input list="usTools">
+<datalist id="usTools">
+<option>QuickBooks</option><option>Lacerte</option><option>Drake</option>
+<option>UltraTax</option><option>ProSeries</option><option>ATX</option>
+</datalist>
 </div>
 
+<div>
+<label>US Tax Forms (Search) <span class="req">*</span></label>
+<input list="usForms">
+<datalist id="usForms">
+<option>1040</option><option>1120</option><option>1120S</option>
+<option>1065</option><option>990</option><option>1041</option>
+</datalist>
+</div>
+
+<div>
+<label>Shift Comfortable (US Hours) <span class="req">*</span></label>
+<select><option>Yes</option></select>
+</div>
+</div>
+</div>
+
+<!-- CANADA / OTHER EXPERIENCE -->
+<div id="expSection" class="section hidden">
+<div class="grid">
 <div>
 <label>Accounting Tools (Search)</label>
-<input list="tools" name="tools">
+<input list="tools">
 <datalist id="tools">
-<option>Tally</option><option>QuickBooks</option><option>Xero</option>
-<option>Sage</option><option>CaseWare</option>
+<option>QuickBooks</option><option>Profile</option>
+<option>CaseWare</option><option>Excel</option>
 </datalist>
 </div>
 
 <div>
-<label>Tax Forms / Types (Search)</label>
-<input list="taxForms" name="taxTypes">
+<label>Tax Forms / Types</label>
+<input list="taxForms">
 <datalist id="taxForms">
-<option>1040</option><option>T2</option><option>T1</option>
-<option>GST</option><option>HST</option><option>Payroll</option>
+<option>T1</option><option>T2</option><option>T4</option>
+<option>GST</option><option>HST</option>
 </datalist>
 </div>
-
-<div>
-<label>Previous Company Name</label>
-<input type="text" name="prevCompany">
-</div>
-
-<div>
-<label>Current Salary</label>
-<input type="text" name="currentSalary">
-</div>
-
-<div>
-<label>Expected Salary</label>
-<input type="text" name="expectedSalary">
-</div>
-
 </div>
 </div>
 
 <!-- FRESHER -->
 <div id="fresherSection" class="section hidden">
 <div class="grid">
-
 <div>
 <label>Basic Accounting Knowledge</label>
-<select name="basicKnowledge">
-<option>Yes</option><option>No</option>
-</select>
+<select><option>Yes</option><option>No</option></select>
 </div>
 
 <div>
 <label>Training Fees Willing</label>
-<select name="trainingFees">
-<option>Yes</option><option>No</option>
-</select>
+<select><option>Yes</option><option>No</option></select>
 </div>
 
 <div>
 <label>Stipend Comfort</label>
-<select name="stipendComfort">
-<option>Yes</option><option>No</option>
-</select>
+<select><option>Yes</option><option>No</option></select>
 </div>
 
 <div>
 <label>Expected Stipend</label>
-<input type="text" name="expectedStipend">
+<input type="text">
 </div>
-
 </div>
 </div>
 
 <!-- INTERVIEW -->
-<div class="section">
-<div class="grid">
-
+<div class="section grid">
 <div>
 <label>Office Interview Availability <span class="req">*</span></label>
-<input type="datetime-local" name="officeInterview" required>
+<input type="datetime-local" required>
 </div>
 
 <div>
 <label>Online Interview Availability</label>
-<input type="datetime-local" name="onlineInterview">
+<input type="datetime-local">
 </div>
 
 <div>
 <label>Availability to Join <span class="req">*</span></label>
-<select name="joinAvailability" required>
+<select required>
 <option>Immediate</option><option>Within 1 week</option>
 <option>Within 2 weeks</option><option>Within 1 month</option>
 <option>Within 2 months</option>
@@ -290,31 +240,20 @@ button{
 </div>
 
 <div>
-<label>Shift Comfortable (US/Canada) <span class="req">*</span></label>
-<select name="shiftComfort" required>
-<option>Yes</option><option>No</option>
-</select>
-</div>
-
-<div>
 <label>Exam Plans?</label>
-<select name="examPlans" id="examPlans">
-<option>No</option><option>Yes</option>
-</select>
+<select id="examPlans"><option>No</option><option>Yes</option></select>
 </div>
 
 <div id="examDiv" class="hidden">
 <label>Exam Details</label>
-<input type="text" name="examDetails">
-</div>
-
+<input type="text">
 </div>
 </div>
 
 <!-- RESUME -->
 <div class="section">
 <label>Upload Resume <span class="req">*</span></label>
-<input type="file" name="resume" required>
+<input type="file" required>
 </div>
 
 <button type="submit">Submit Application</button>
@@ -323,17 +262,31 @@ button{
 </div>
 
 <script>
-document.getElementById("ownVehicle").onchange=e=>{
-document.getElementById("vehicleDiv").classList.toggle("hidden",e.target.value!=="Yes");
+const appType=document.getElementById("applicationType");
+const usSection=document.getElementById("usSection");
+const expSection=document.getElementById("expSection");
+const fresher=document.getElementById("fresherSection");
+const exp=document.getElementById("experience");
+const ownVehicle=document.getElementById("ownVehicle");
+const vehicleDiv=document.getElementById("vehicleDiv");
+const examPlans=document.getElementById("examPlans");
+const examDiv=document.getElementById("examDiv");
+
+appType.onchange=()=>{
+usSection.classList.toggle("hidden",appType.value!=="US");
+expSection.classList.toggle("hidden",appType.value==="US");
 };
 
-document.getElementById("experience").onchange=e=>{
-document.getElementById("fresherSection").classList.toggle("hidden",e.target.value!=="Fresher");
-document.getElementById("experiencedSection").classList.toggle("hidden",e.target.value==="Fresher");
+exp.onchange=()=>{
+fresher.classList.toggle("hidden",exp.value!=="Fresher");
 };
 
-document.getElementById("examPlans").onchange=e=>{
-document.getElementById("examDiv").classList.toggle("hidden",e.target.value!=="Yes");
+ownVehicle.onchange=()=>{
+vehicleDiv.classList.toggle("hidden",ownVehicle.value!=="Yes");
+};
+
+examPlans.onchange=()=>{
+examDiv.classList.toggle("hidden",examPlans.value!=="Yes");
 };
 </script>
 

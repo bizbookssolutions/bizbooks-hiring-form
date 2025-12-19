@@ -1,10 +1,230 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
-  <title>TEST – Bizbooks</title>
+  <meta charset="UTF-8">
+  <title>Bizbooks Solutions | Job Application</title>
+  <style>
+    body { font-family: Arial; padding: 20px; max-width: 900px; margin: auto; }
+    label { font-weight: bold; display:block; margin-top:15px; }
+    input, select, textarea { width:100%; padding:8px; margin-top:5px; }
+    .hidden { display:none; }
+    button { margin-top:20px; padding:12px; background:#1a73e8; color:#fff; border:none; width:100%; font-size:16px; }
+  </style>
 </head>
 <body>
-  <h1>IF YOU SEE THIS, PAGES UPDATED</h1>
+
+<h2>Bizbooks Solutions Private Limited</h2>
+<h3>Candidate Hiring Application Form</h3>
+
+<form id="jobForm">
+
+<!-- BASIC INFO -->
+<label>Application Type</label>
+<select name="applicationType">
+  <option>India Application</option>
+  <option>Canada Application</option>
+  <option>US Application</option>
+  <option>Other Application</option>
+</select>
+
+<label>Email</label>
+<input type="email" name="email" required>
+
+<label>Full Name</label>
+<input type="text" name="fullName" required>
+
+<label>Contact Number</label>
+<input type="text" name="contact" required>
+
+<label>Gender</label>
+<select name="gender">
+  <option>Male</option>
+  <option>Female</option>
+  <option>Other</option>
+</select>
+
+<label>Marital Status</label>
+<select name="maritalStatus">
+  <option>Single</option>
+  <option>Married</option>
+</select>
+
+<label>Date of Birth</label>
+<input type="date" name="dob">
+
+<label>Qualifications</label>
+<input type="text" name="qualifications">
+
+<label>Current Address</label>
+<textarea name="currentAddress"></textarea>
+
+<label>Can relocate to Mohali?</label>
+<select name="relocateMohali">
+  <option>No</option>
+  <option>Yes</option>
+</select>
+
+<label>Permanent Address</label>
+<textarea name="permanentAddress"></textarea>
+
+<!-- VEHICLE -->
+<label>Own Vehicle?</label>
+<select name="ownVehicle" id="ownVehicle">
+  <option>No</option>
+  <option>Yes</option>
+</select>
+
+<div id="vehicleTypeDiv" class="hidden">
+  <label>Vehicle Type</label>
+  <input type="text" name="vehicleType">
+</div>
+
+<!-- ROLE -->
+<label>Current Role</label>
+<input type="text" name="currentRole">
+
+<label>Role Applying For</label>
+<input type="text" name="roleApplying">
+
+<label>Total Experience Years</label>
+<select name="totalExperience" id="experience">
+  <option>Fresher</option>
+  <option>&lt; 1 year</option>
+  <option>2–4 years</option>
+  <option>5–7 years</option>
+  <option>7+ years</option>
+</select>
+
+<!-- EXPERIENCED ONLY -->
+<div id="experiencedSection" class="hidden">
+  <label>Employment Status</label>
+  <select name="employmentStatus">
+    <option>Employed</option>
+    <option>Unemployed</option>
+    <option>Self-employed</option>
+  </select>
+
+  <label>Accounting Tools</label>
+  <textarea name="tools"></textarea>
+
+  <label>Tax Forms / Tax Types Known</label>
+  <textarea name="taxTypes"></textarea>
+
+  <label>Previous Company Name</label>
+  <input type="text" name="prevCompany">
+
+  <label>Previous Company Email</label>
+  <input type="email" name="prevEmail">
+
+  <label>Previous Company Contact</label>
+  <input type="text" name="prevContact">
+
+  <label>Current Salary</label>
+  <input type="text" name="currentSalary">
+
+  <label>Expected Salary</label>
+  <input type="text" name="expectedSalary">
+
+  <label>Salary Proof Available?</label>
+  <select name="salaryProof">
+    <option>No</option>
+    <option>Yes</option>
+  </select>
+</div>
+
+<!-- FRESHER ONLY -->
+<div id="fresherSection" class="hidden">
+  <label>Basic Accounting Knowledge</label>
+  <select name="basicKnowledge">
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+
+  <label>Willing to Pay Training Fees?</label>
+  <select name="trainingFees">
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+
+  <label>Stipend Comfort</label>
+  <select name="stipendComfort">
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+
+  <label>Expected Stipend</label>
+  <input type="text" name="expectedStipend">
+</div>
+
+<!-- OTHER -->
+<label>Reference Source</label>
+<select name="referenceSource">
+  <option>Friend</option>
+  <option>Employee</option>
+  <option>LinkedIn</option>
+  <option>Indeed</option>
+  <option>Website</option>
+  <option>Google</option>
+  <option>Other</option>
+</select>
+
+<label>Reference Name</label>
+<input type="text" name="referenceName">
+
+<label>Office Interview Availability</label>
+<input type="datetime-local" name="officeInterview">
+
+<label>Online Interview Availability</label>
+<input type="datetime-local" name="onlineInterview">
+
+<label>Availability to Join</label>
+<select name="joinAvailability">
+  <option>Immediate</option>
+  <option>Within 1 week</option>
+  <option>Within 2 weeks</option>
+  <option>Within 1 month</option>
+  <option>Within 2 months</option>
+</select>
+
+<label>Shift Comfortable (US/Canada)</label>
+<select name="shiftComfort">
+  <option>Yes</option>
+  <option>No</option>
+</select>
+
+<label>Any Exam Plans?</label>
+<select name="examPlans" id="examPlans">
+  <option>No</option>
+  <option>Yes</option>
+</select>
+
+<div id="examDetailsDiv" class="hidden">
+  <label>Exam Details</label>
+  <input type="text" name="examDetails">
+</div>
+
+<label>LinkedIn Profile URL</label>
+<input type="url" name="linkedin">
+
+<label>Upload Resume</label>
+<input type="file" name="resume" required>
+
+<button type="submit">Submit Application</button>
+
+</form>
+
+<script>
+document.getElementById("ownVehicle").onchange = e =>
+  document.getElementById("vehicleTypeDiv").classList.toggle("hidden", e.target.value !== "Yes");
+
+document.getElementById("experience").onchange = e => {
+  document.getElementById("fresherSection").classList.toggle("hidden", e.target.value !== "Fresher");
+  document.getElementById("experiencedSection").classList.toggle("hidden", e.target.value === "Fresher");
+};
+
+document.getElementById("examPlans").onchange = e =>
+  document.getElementById("examDetailsDiv").classList.toggle("hidden", e.target.value !== "Yes");
+</script>
+
 </body>
 </html>

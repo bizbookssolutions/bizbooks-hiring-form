@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+
+<h2>Job Applications</h2>
+
+<table border="1" id="tbl" cellpadding="8"></table>
+
+<script src="firebase.js"></script>
+
+<script type="module">
+  import { collection, getDocs } from
+    "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
+  import { onAuthStateChanged, signOut } from
+    "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+
+  onAuthStateChanged(auth, async (user) => {
+    // ❌ Not logged in
+    if (!user) {
+      location.href = "admin-login.html";
+      return;
+    }
+
+    // 🔐 ADMIN-ONLY ACCESS
+    const allowedAdmins = ["admin@bizbooks.com"];
+
+    if (!allowedAdmins.includes(user.email)) {
+      alert("Access denied. Admins only.");
+      await signOut(auth);
+      location.href = "admin-login.html";
+      return;
+    }
+
+    // ✅ Load applications
+    const snapshot = await getDocs(collection(db, "applications"));
+    const tbl = document.getElementById("tbl");
+
+    tbl.innerHTML = `
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Experience</th>
+        <th>Resume</th>
+      </tr>
+    `;
+
+    snapshot.forEach(doc => {
+      const d = doc.data();
+      tbl.innerHTML += `
+        <tr>
+          <td>${d.fullname}</td>
+          <td>${d.email}</td>
+          <td>${d.role}</td>
+          <td>${d.experience}</td>
+          <td><a href="${d.resume}" target="_blank">Download</a></td>
+        </tr>
+      `;
+    });
+  });
+</script>
+
+</body>
+</html>

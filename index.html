@@ -59,11 +59,7 @@ button{width:100%;background:#2563eb;color:#fff;border:none;padding:14px;margin-
 >
 <hr>
 <h2>Job Application</h2>
-<form 
-  method="POST"
-  action="https://script.google.com/macros/s/AKfycbwPC3M9pD7mK61MlS0wbn6sy2fQbT0C4NccrDLChYdcSt8w7TZ-SHH-RT6fTyZUGx5m/exec"
-  enctype="multipart/form-data"
->
+<form id="jobForm" enctype="multipart/form-data">
 
 <!-- BASIC DETAILS -->
 <h3>Basic Details</h3>
@@ -289,11 +285,7 @@ button{width:100%;background:#2563eb;color:#fff;border:none;padding:14px;margin-
 <!-- RESUME -->
 <h3>Resume</h3>
 <label>Upload Resume <span class="required">*</span></label>
-<input 
-  type="url"
-  name="resumeDriveLink"
-  placeholder="Paste Google Drive resume link"
-  req
+<input type="file" name="resume" required>
 
 <button type="submit">Submit Application</button>
 </form>
@@ -319,13 +311,14 @@ refSource.onchange=()=>refOther.style.display=refSource.value==="Other"?"block":
 examPlans.onchange=()=>examDetailsBlock.style.display=examPlans.value==="No"?"none":"block";
 currentAddress.oninput=()=>relocateBlock.style.display=currentAddress.value.toLowerCase().includes("mohali")?"none":"block";
 
-jobForm.onsubmit = () => {
-  if (!iti.isValidNumber()) {
-    alert("Please enter a valid phone number");
-    return false; // ❌ stop submit
-  }
-  fullPhone.value = iti.getNumber();
-  return true; // ✅ allow NORMAL form submit
+jobForm.onsubmit=async e=>{
+e.preventDefault();
+if(!iti.isValidNumber()){alert("Please enter a valid phone number");return;}
+fullPhone.value=iti.getNumber();
+await fetch("https://script.google.com/macros/s/AKfycbwPC3M9pD7mK61MlS0wbn6sy2fQbT0C4NccrDLChYdcSt8w7TZ-SHH-RT6fTyZUGx5m/exec",
+{method:"POST",body:new FormData(jobForm)});
+alert("Application submitted successfully");
+jobForm.reset();
 };
 </script>
 

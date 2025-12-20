@@ -9,6 +9,7 @@
 
 <input id="email" placeholder="Email"><br><br>
 <input id="password" type="password" placeholder="Password"><br><br>
+
 <button onclick="login()">Login</button>
 
 <script src="firebase.js"></script>
@@ -24,7 +25,7 @@
         email.value,
         password.value
       );
-      location.href = "admin-dashboard.html";
+      alert("Login successful");
     } catch (err) {
       alert(err.message);
     }

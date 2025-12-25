@@ -315,11 +315,24 @@ jobForm.onsubmit=async e=>{
 e.preventDefault();
 if(!iti.isValidNumber()){alert("Please enter a valid phone number");return;}
 fullPhone.value=iti.getNumber();
-await fetch("https://script.google.com/macros/s/AKfycbwPCQOwdRf_oZ-JIBFEPyXR23r89ims7U-J0VMObczpLfSJZlIDU5JSuxuJNC5C6Qi-/exec",
-{method:"POST",body:new FormData(jobForm)});
-alert("Application submitted successfully");
-jobForm.reset();
+const formData = new FormData(jobForm);
+const fileInput = jobForm.querySelector('input[name="resume"]');
+const reader = new FileReader();
+
+reader.onload = async function () {
+  formData.set("resume", reader.result.split(",")[1]);
+
+  await fetch("https://script.google.com/macros/s/AKfycbx0i5ASurI0qyu5MK7SOx3QLRdHSiJj9ixSWOhzNIyFd8JVqmSRDb1QS9EjDTn0zFKO/exec", {
+    method: "POST",
+    body: formData
+  });
+
+  alert("Application submitted successfully");
+  jobForm.reset();
 };
+
+reader.readAsDataURL(fileInput.files[0]);
+
 </script>
 
 </body>

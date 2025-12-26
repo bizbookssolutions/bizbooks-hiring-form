@@ -311,22 +311,15 @@ refSource.onchange=()=>refOther.style.display=refSource.value==="Other"?"block":
 examPlans.onchange=()=>examDetailsBlock.style.display=examPlans.value==="No"?"none":"block";
 currentAddress.oninput=()=>relocateBlock.style.display=currentAddress.value.toLowerCase().includes("mohali")?"none":"block";
 
-<form
-  method="post"
-  action="https://script.google.com/macros/s/AKfycbwPC3M9pD7mK61MlS0wbn6sy2fQbT0C4NccrDLChYdcSt8w7TZ-SHH-RT6fTyZUGx5m/exec"
-  enctype="multipart/form-data"
->
-
-    document.querySelector("form").addEventListener("submit", function () {
-  if (!iti.isValidNumber()) {
-    alert("Please enter a valid phone number");
-    event.preventDefault();
-    return;
-  }
-  fullPhone.value = iti.getNumber();
-});
-
-
+jobForm.onsubmit=async e=>{
+e.preventDefault();
+if(!iti.isValidNumber()){alert("Please enter a valid phone number");return;}
+fullPhone.value=iti.getNumber();
+await fetch("https://script.google.com/macros/s/AKfycbxA06N9WeudsCNwyudFnuF7F_SDcMsNEr0FOX4996x7Prrax_kqZ0D0AwAEtWMNSw0l/exec",
+{method:"POST",body:new FormData(jobForm)});
+alert("Application submitted successfully");
+jobForm.reset();
+};
 </script>
 
 </body>

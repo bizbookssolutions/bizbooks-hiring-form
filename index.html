@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Careers | Bizbooks Solutions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Careers at Bizbooks Solutions – Apply for accounting, bookkeeping, payroll, and tax support roles.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Careers at Bizbooks Solutions. Apply for accounting, bookkeeping, payroll, and tax support roles.">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --primary: #1f3db5;
-      --text-dark: #1f2a44;
-      --text-light: #555;
-      --border: #e2e6ea;
-      --bg: #f4f6f9;
+      --primary: #1e40af;
+      --primary-dark: #1e3a8a;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
     }
 
     * {
@@ -20,127 +26,148 @@
 
     body {
       margin: 0;
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text-light);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text-muted);
     }
 
-    .page {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 16px;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 40px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    .wrapper {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 48px 18px 80px;
     }
 
     /* Header */
     .header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 30px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 20px;
+      text-align: center;
+      margin-bottom: 48px;
     }
 
     .header img {
-      height: 48px;
-      width: auto;
+      height: 56px;
+      margin-bottom: 18px;
     }
 
     .header h1 {
-      font-size: 24px;
       margin: 0;
+      font-size: 30px;
+      font-weight: 700;
       color: var(--text-dark);
     }
 
-    /* Text */
-    p {
-      font-size: 15px;
+    .header p {
+      max-width: 640px;
+      margin: 14px auto 0;
+      font-size: 16px;
       line-height: 1.7;
-      margin: 14px 0;
     }
 
-    /* Application blocks */
+    /* Main Card */
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 40px;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+    }
+
+    /* Application options */
     .option {
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 24px;
-      margin-top: 24px;
+      border-radius: 12px;
+      padding: 28px;
+      margin-top: 28px;
     }
 
     .option h3 {
-      margin: 0 0 8px 0;
-      font-size: 17px;
-      color: var(--primary);
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-dark);
     }
 
-    /* Buttons */
+    .option p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
     .btn {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 12px 22px;
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 26px;
       background: var(--primary);
-      color: #fff;
+      color: #ffffff;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 14px;
       font-weight: 600;
       border: none;
       cursor: pointer;
-    }
-
-    .btn.secondary {
-      background: #f1f3f6;
-      color: var(--text-dark);
-      border: 1px solid #d0d5dd;
-    }
-
-    .btn.secondary:hover {
-      background: #e8ebf0;
+      transition: background 0.2s ease;
     }
 
     .btn:hover {
-      background: #162f96;
+      background: var(--primary-dark);
     }
 
-    /* Notes & share */
+    /* Sections */
     .section {
-      margin-top: 32px;
-      padding-top: 18px;
+      margin-top: 42px;
+      padding-top: 24px;
       border-top: 1px solid var(--border);
     }
 
+    .section strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
     ul {
-      margin: 10px 0 0 18px;
+      margin: 0;
+      padding-left: 18px;
       font-size: 14px;
     }
 
+    li {
+      margin-bottom: 6px;
+    }
+
+    /* Share */
     .share-buttons {
-      margin-top: 12px;
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .btn.secondary {
+      background: #f1f5f9;
+      color: var(--text-dark);
+      border: 1px solid var(--border);
+    }
+
+    .btn.secondary:hover {
+      background: #e2e8f0;
     }
 
     .copied {
       font-size: 13px;
-      color: green;
-      margin-top: 8px;
+      color: #15803d;
+      margin-top: 10px;
       display: none;
     }
 
     footer {
-      margin-top: 36px;
-      font-size: 13px;
-      color: #666;
+      margin-top: 48px;
+      padding-top: 18px;
       border-top: 1px solid var(--border);
-      padding-top: 16px;
+      font-size: 13px;
+      color: #64748b;
     }
 
     footer a {
@@ -149,46 +176,40 @@
     }
 
     /* Mobile */
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       .card {
-        padding: 26px;
-      }
-
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 28px;
       }
 
       .header h1 {
-        font-size: 22px;
+        font-size: 26px;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="page">
+  <div class="wrapper">
+
+    <!-- Header -->
+    <div class="header">
+      <img src="https://raw.githubusercontent.com/bizbookssolutions/bizbooks-careers/main/images/newlogo-05.png"
+           alt="Bizbooks Solutions">
+      <h1>Careers at Bizbooks Solutions</h1>
+      <p>
+        We are continuously looking for qualified professionals in accounting,
+        bookkeeping, payroll, and tax support.  
+        Please select one of the application options below.
+      </p>
+    </div>
+
+    <!-- Main card -->
     <div class="card">
 
-      <!-- Header -->
-      <div class="header">
-        <img src="https://raw.githubusercontent.com/bizbookssolutions/bizbooks-careers/main/images/newlogo-05.png"
-             alt="Bizbooks Solutions Logo">
-        <h1>Careers at Bizbooks Solutions</h1>
-      </div>
-
-      <!-- Intro -->
-      <p>
-        Bizbooks Solutions is continuously looking for qualified professionals in
-        accounting, bookkeeping, payroll, and tax support.
-        Please choose one of the application methods below.
-      </p>
-
-      <!-- Option 1 -->
       <div class="option">
         <h3>Resume Upload (Recommended)</h3>
         <p>
-          Secure submission via Google Form.
+          Secure submission via Google Form.  
           A Google login is required to upload documents.
         </p>
         <a class="btn" href="https://forms.gle/hUnCAfShgdWSAoSQ9" target="_blank">
@@ -196,7 +217,6 @@
         </a>
       </div>
 
-      <!-- Option 2 -->
       <div class="option">
         <h3>Apply Using Resume Link</h3>
         <p>
@@ -208,26 +228,24 @@
         </a>
       </div>
 
-      <!-- Notes -->
       <div class="section">
-        <strong>Important Notes</strong>
+        <strong>Important information</strong>
         <ul>
-          <li>Please select the option that best suits you</li>
           <li>Only one application method is required</li>
+          <li>Please select the option that best suits you</li>
           <li>All applications follow the same hiring process</li>
         </ul>
       </div>
 
-      <!-- Share -->
       <div class="section">
         <strong>Share this opportunity</strong>
         <p>
-          If you know someone who may be a good fit, you are welcome to share or
-          recommend this opportunity.
+          If you know someone who may be a good fit, feel free to share or recommend
+          this opportunity.
         </p>
 
         <div class="share-buttons">
-          <button class="btn secondary" onclick="copyLink()">Copy Link</button>
+          <button class="btn secondary" onclick="copyLink()">Copy link</button>
           <button class="btn secondary" onclick="nativeShare()">Share</button>
           <a class="btn secondary"
              href="https://wa.me/?text=Careers%20at%20Bizbooks%20Solutions:%20https://bizbookssolutions.github.io/bizbooks-careers/"
@@ -239,7 +257,6 @@
         <div id="copiedMsg" class="copied">Link copied to clipboard</div>
       </div>
 
-      <!-- Footer -->
       <footer>
         Contact:
         <a href="mailto:hiring.bizbookssolutions@outlook.com">
@@ -268,7 +285,7 @@
           url: pageUrl
         });
       } else {
-        alert("Sharing is not supported on this browser. Please use Copy Link or WhatsApp.");
+        alert("Sharing is not supported on this browser. Please use Copy link or WhatsApp.");
       }
     }
   </script>

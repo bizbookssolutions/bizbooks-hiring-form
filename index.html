@@ -1,320 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>BizBooks Solutions – Job Application</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Bizbooks Solutions – Careers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Careers at Bizbooks Solutions – Apply for accounting, bookkeeping, payroll, and tax support roles." />
 
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f4f6f9;
+      color: #1f2937;
+      line-height: 1.6;
+    }
 
-<style>
-body{font-family:Segoe UI,Arial;background:#f4f6f8;font-size:14px}
-.form-card{max-width:1200px;margin:30px auto;background:#fff;padding:28px 34px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.08)}
-h2{text-align:center;margin-bottom:12px}
-h3{margin-top:26px;color:#2563eb;border-bottom:1px solid #e5e7eb;padding-bottom:4px}
-.required{color:red}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px}
-.full{grid-column:1/-1}
-label{font-weight:600;display:block;margin-top:6px}
-input,select,textarea{width:100%;padding:8px;margin-top:4px;border-radius:6px;border:1px solid #d1d5db}
-textarea{min-height:90px}
-.inline label{display:inline-flex;align-items:center;gap:6px;margin-right:16px;font-weight:500}
+    .container {
+      max-width: 760px;
+      margin: 60px auto;
+      background: #ffffff;
+      padding: 48px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
 
-/* ✅ CHECKBOX ALIGNMENT FIX */
-.checkbox-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:8px 16px;
-  margin-top:10px
-}
-.checkbox-grid label{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-weight:500;
-  line-height:1.3;
-  cursor:pointer
-}
-.checkbox-grid input[type="checkbox"]{
-  width:16px;
-  height:16px;
-  margin:0;
-  flex-shrink:0
-}
+    h1 {
+      margin-top: 0;
+      font-size: 28px;
+      color: #111827;
+    }
 
-.hidden{display:none}
-button{width:100%;background:#2563eb;color:#fff;border:none;padding:14px;margin-top:26px;border-radius:8px;font-size:15px;cursor:pointer}
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
-</style>
+    p.intro {
+      font-size: 16px;
+      margin-bottom: 32px;
+      color: #374151;
+    }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .card p {
+      margin: 0 0 16px;
+      color: #4b5563;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      background: #2563eb;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #1e40af;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #4b5563;
+      margin-top: 24px;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 32px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<div class="form-card">
-<h2>BIZBOOKS SOLUTIONS PVT. LTD.</h2>
-<hr>
-<h2>Job Application</h2>
-<form id="jobForm" enctype="multipart/form-data">
 
-<!-- BASIC DETAILS -->
-<h3>Basic Details</h3>
-<div class="grid">
-<div><label>Email <span class="required">*</span></label><input type="email" name="email" required></div>
-<div><label>Full Name <span class="required">*</span></label><input name="fullname" required></div>
+  <div class="container">
+    <h1>Careers at Bizbooks Solutions</h1>
 
-<div>
-<label>Contact Number <span class="required">*</span></label>
-<input id="phone" type="tel" required>
-<input type="hidden" name="contact" id="fullPhone">
-</div>
+    <p class="intro">
+      We are hiring skilled professionals in accounting, bookkeeping, payroll, and tax support.
+      Please choose one of the application options below.
+    </p>
 
-<div><label>Date of Birth <span class="required">*</span></label><input type="date" name="dateOfBirth" required></div>
+    <div class="card">
+      <h3>🔵 Upload Resume <span style="font-weight: normal;">(Recommended)</span></h3>
+      <p>Secure submission via Google Form. Google login required.</p>
+      <a class="btn" href="https://forms.gle/hUnCAfShgdWSAoSQ9" target="_blank">Apply Now</a>
+    </div>
 
-<div><label>Gender</label>
-<select name="gender"><option>Male</option><option>Female</option><option>Other</option><option>Prefer not to say</option></select>
-</div>
+    <div class="card">
+      <h3>🟢 Apply Using Resume Link</h3>
+      <p>
+        No login required. Please ensure your resume link access is set to
+        <strong>“Anyone with the link can view.”</strong>
+      </p>
+      <a class="btn" href="https://forms.gle/TsRFMGhJ3Ba6UNts9" target="_blank">Apply Now</a>
+    </div>
 
-<div><label>Marital Status</label>
-<select name="maritalStatus"><option>Single</option><option>Married</option><option>Other</option></select>
-</div>
-</div>
+    <p class="note">
+      • Please choose the option that best suits you<br />
+      • Only one application method is required<br />
+      • Both options lead to the same hiring process
+    </p>
 
-<!-- EDUCATION & ADDRESS -->
-<h3>Education & Address</h3>
-<div class="grid">
-<div>
-<label>Qualifications</label>
-<select id="qualificationSelect" name="qualifications">
-<option>CA</option><option>CMA</option><option>CA Inter</option>
-<option>M.Com</option><option>MBA in Finance</option><option>B.Com</option><option>Other</option>
-</select>
-<input id="qualificationOther" class="hidden" name="qualificationOther" placeholder="Specify qualification">
-</div>
-
-<div><label>Current Address</label><input id="currentAddress" name="currentAddress" placeholder="City, State, Country"></div>
-
-<div id="relocateBlock" class="hidden">
-<label>Can relocate to Mohali?</label>
-<select name="relocateToMohali"><option>Yes</option><option>No</option></select>
-</div>
-
-<div><label>Permanent Address</label><input name="permanentAddress" placeholder="City, State, Country"></div>
-</div>
-
-<!-- ROLE & EXPERIENCE -->
-<h3>Role & Experience</h3>
-<div class="grid">
-<div>
-<label>Current Role</label>
-<select name="currentRole">
-<option>Accounts Trainee</option><option>Accounts Executive</option><option>Senior Accountant</option>
-<option>Deputy Team Leader</option><option>Team Leader</option>
-<option>Corporate Tax Specialist</option><option>Manager</option><option>Manager Accounts</option><option>Other</option>
-</select>
-</div>
-
-<div>
-<label>Role Applying For</label>
-<select name="roleApplyingFor">
-<option>Internship</option><option>Accounts Trainee</option><option>Accounts Executive</option>
-<option>Senior Accountant</option><option>Deputy Team Leader</option>
-<option>Team Leader</option><option>Corporate Tax Specialist</option><option>Manager</option><option>Manager Accounts</option>
-</select>
-</div>
-
-<div>
-<label>Total Experience <span class="required">*</span></label>
-<select id="experience" name="totalExperienceYears" required>
-<option>Fresher</option><option>&lt;1 year</option><option>2–4 years</option>
-<option>5–7 years</option><option>7+ years</option><option>10+ years</option>
-</select>
-</div>
-
-<div>
-<label>Employment Status</label>
-<select name="employmentStatus">
-<option>Employed</option><option>Self-employed</option><option>Unemployed</option><option>Just completed study</option>
-</select>
-</div>
-</div>
-
-<!-- FRESHER -->
-<div id="fresherBlock" class="hidden">
-<h3>Fresher Details</h3>
-<label>Basic Accounting Knowledge</label>
-<div class="inline">
-<label><input type="radio" name="basicAccountingKnowledge" value="Yes"> Yes</label>
-<label><input type="radio" name="basicAccountingKnowledge" value="No"> No</label>
-</div>
-
-<label>Training Fees Willing</label>
-<div class="inline">
-<label><input type="radio" name="trainingFeesWilling" value="Yes"> Yes</label>
-<label><input type="radio" name="trainingFeesWilling" value="No"> No</label>
-</div>
-
-<div id="stipendBlock" class="hidden">
-<label>Expected Monthly Stipend (INR)</label>
-<input name="expectedStipend" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
-</div>
-</div>
-
-<!-- EXPERIENCED -->
-<div id="experiencedBlock" class="hidden">
-<h3>Experience Details</h3>
-<input name="previousCompanyName" placeholder="Previous Company Name">
-<input name="previousCompanyEmail" placeholder="Previous Company Email">
-<input name="previousCompanyContact" placeholder="Previous Company Contact">
-
-<label>Current Monthly Salary (INR)</label>
-<input name="currentSalary" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
-
-<label>Expected Monthly Salary (INR)</label>
-<input name="expectedSalary" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
-
-<label>Salary Proof Available</label>
-<div class="inline">
-<label><input type="radio" name="salaryProofAvailable" value="Yes"> Yes</label>
-<label><input type="radio" name="salaryProofAvailable" value="No"> No</label>
-</div>
-</div>
-
-<!-- ACCOUNTING TOOLS -->
-<h3>Accounting Tools</h3>
-<div class="checkbox-grid">
-<label><input type="checkbox" name="accountingTools[]" value="QuickBooks Online"> QuickBooks Online</label>
-<label><input type="checkbox" name="accountingTools[]" value="QuickBooks Desktop"> QuickBooks Desktop</label>
-<label><input type="checkbox" name="accountingTools[]" value="Tally"> Tally</label>
-<label><input type="checkbox" name="accountingTools[]" value="Xero"> Xero</label>
-<label><input type="checkbox" name="accountingTools[]" value="ProFile"> ProFile</label>
-<label><input type="checkbox" name="accountingTools[]" value="CaseWare"> CaseWare</label>
-<label><input type="checkbox" name="accountingTools[]" value="MS Excel"> MS Excel</label>
-<label><input type="checkbox" name="accountingTools[]" value="Ultra Tax"> Ultra Tax</label>
-<label><input type="checkbox" name="accountingTools[]" value="CCH"> CCH</label>
-<label><input type="checkbox" name="accountingTools[]" value="None"> None</label>
-<label><input type="checkbox" name="accountingTools[]" value="Fresher in all"> Fresher in all</label>
-<label><input type="checkbox" id="toolsOtherChk"> Other</label>
-</div>
-<input id="toolsOther" class="hidden" name="accountingToolsOther" placeholder="Specify other accounting tool">
-
-<!-- TAX TYPES -->
-<h3>Tax Types</h3>
-<div class="checkbox-grid">
-<label><input type="checkbox" name="taxTypes[]" value="T1"> T1 (Canada)</label>
-<label><input type="checkbox" name="taxTypes[]" value="T2"> T2</label>
-<label><input type="checkbox" name="taxTypes[]" value="T3"> T3</label>
-<label><input type="checkbox" name="taxTypes[]" value="T4"> T4</label>
-<label><input type="checkbox" name="taxTypes[]" value="T4A"> T4A</label>
-<label><input type="checkbox" name="taxTypes[]" value="T5"> T5</label>
-<label><input type="checkbox" name="taxTypes[]" value="GST-HST Canada"> GST-HST Canada</label>
-
-<label><input type="checkbox" name="taxTypes[]" value="1120"> 1120 (USA)</label>
-<label><input type="checkbox" name="taxTypes[]" value="1120-S"> 1120-S</label>
-<label><input type="checkbox" name="taxTypes[]" value="1065"> 1065</label>
-<label><input type="checkbox" name="taxTypes[]" value="1041"> 1041</label>
-<label><input type="checkbox" name="taxTypes[]" value="990"> 990</label>
-<label><input type="checkbox" name="taxTypes[]" value="1040s"> 1040s</label>
-
-<label><input type="checkbox" name="taxTypes[]" value="GST India"> GST India</label>
-<label><input type="checkbox" name="taxTypes[]" value="TDS"> TDS</label>
-<label><input type="checkbox" name="taxTypes[]" value="Income Tax India"> Income Tax India</label>
-
-<label><input type="checkbox" name="taxTypes[]" value="None"> None</label>
-<label><input type="checkbox" name="taxTypes[]" value="Fresher in all"> Fresher in all</label>
-<label><input type="checkbox" id="taxOtherChk"> Other</label>
-</div>
-<input id="taxOther" class="hidden" name="taxTypesOther" placeholder="Specify other tax type">
-
-<!-- INTERVIEW & REFERENCE -->
-<h3>Interview & Reference</h3>
-<div class="grid">
-<div>
-<label>Reference Source</label>
-<select id="refSource" name="referenceSource">
-<option>Referred by a friend</option><option>Referred by an employee</option>
-<option>LinkedIn</option><option>Indeed</option><option>Website</option><option>Google</option><option>Other</option>
-</select>
-<input id="refOther" class="hidden" name="referenceSourceOther" placeholder="Specify reference source">
-</div>
-
-<div><label>Reference Name</label><input name="referenceName"></div>
-<div><label>Office Interview Availability</label><input type="datetime-local" name="officeInterviewAvailability"></div>
-<div><label>Online Interview Availability</label><input type="datetime-local" name="onlineInterviewAvailability"></div>
-
-<div>
-<label>Availability to Join</label>
-<select name="availabilityToJoin">
-<option>Immediately</option><option>Within 1 week</option><option>Within 2 weeks</option>
-<option>Within 1 month</option><option>Within 2 months</option><option>Other</option>
-</select>
-</div>
-
-<div>
-<label>Shift Comfortable (US/Canada)</label>
-<select name="shiftComfortable"><option>Yes</option><option>No</option></select>
-</div>
-</div>
-
-<!-- EXAMS -->
-<h3>Exams & Profile</h3>
-<div class="grid">
-<div>
-<label>Exam Plans</label>
-<select id="examPlans" name="examPlans">
-<option>No</option><option>Yes, within 3 months</option>
-<option>Yes, within 6 months</option><option>Yes, after 6 months</option><option>Other</option>
-</select>
-</div>
-
-<div id="examDetailsBlock" class="hidden">
-<label>Exam Details</label>
-<textarea name="examDetails" placeholder="Exam name, level, expected attempt"></textarea>
-</div>
-
-<div class="full">
-<label>LinkedIn Profile</label>
-<input name="linkedinURL" placeholder="https://linkedin.com/in/yourname">
-</div>
-</div>
-
-<!-- RESUME -->
-<h3>Resume</h3>
-<label>Upload Resume <span class="required">*</span></label>
-<input type="file" name="resume" required>
-
-<button type="submit">Submit Application</button>
-</form>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"></script>
-
-<script>
-const iti=intlTelInput(phone,{initialCountry:"auto",geoIpLookup:cb=>fetch("https://ipapi.co/json").then(r=>r.json()).then(d=>cb(d.country_code))});
-
-experience.onchange=()=>{
-fresherBlock.style.display=experience.value==="Fresher"?"block":"none";
-experiencedBlock.style.display=experience.value==="Fresher"?"none":"block";
-};
-
-document.getElementsByName("trainingFeesWilling").forEach(r=>r.onchange=()=>stipendBlock.style.display=r.value==="No"?"block":"none");
-
-qualificationSelect.onchange=()=>qualificationOther.style.display=qualificationSelect.value==="Other"?"block":"none";
-toolsOtherChk.onchange=()=>toolsOther.style.display=toolsOtherChk.checked?"block":"none";
-taxOtherChk.onchange=()=>taxOther.style.display=taxOtherChk.checked?"block":"none";
-refSource.onchange=()=>refOther.style.display=refSource.value==="Other"?"block":"none";
-examPlans.onchange=()=>examDetailsBlock.style.display=examPlans.value==="No"?"none":"block";
-currentAddress.oninput=()=>relocateBlock.style.display=currentAddress.value.toLowerCase().includes("mohali")?"none":"block";
-
-jobForm.onsubmit=async e=>{
-e.preventDefault();
-if(!iti.isValidNumber()){alert("Please enter a valid phone number");return;}
-fullPhone.value=iti.getNumber();
-await fetch("https://script.google.com/macros/s/AKfycbzAc8Z9MIjedGpl0a2s7n_Qt7fcwts1AjjJZi2ooDXrrTq0bC-UI0HD9dJ52FrzMSVx/exec",
-{method:"POST",body:new FormData(jobForm)});
-alert("Application submitted successfully");
-jobForm.reset();
-};
-</script>
+    <div class="footer">
+      Contact: bizbookssolutions@gmail.com
+    </div>
+  </div>
 
 </body>
 </html>

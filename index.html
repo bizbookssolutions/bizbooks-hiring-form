@@ -30,20 +30,20 @@
     }
 
     .shell {
-      max-width: 920px;
+      max-width: 960px;
       margin: auto;
       padding: 72px 20px 96px;
     }
 
-    /* Header */
+    /* HERO */
     .hero {
       text-align: center;
       margin-bottom: 64px;
     }
 
     .hero img {
-      height: 54px;
-      margin-bottom: 20px;
+      height: 82px;               /* LOGO MADE PROMINENT */
+      margin-bottom: 26px;
     }
 
     .hero h1 {
@@ -55,38 +55,37 @@
     }
 
     .hero p {
-      max-width: 680px;
+      max-width: 700px;
       margin: 18px auto 0;
       font-size: 17px;
       line-height: 1.75;
     }
 
-    /* Card */
+    /* MAIN PANEL */
     .panel {
       background: var(--card);
-      border-radius: 18px;
-      padding: 48px;
+      border-radius: 20px;
+      padding: 52px;
       box-shadow:
-        0 20px 40px rgba(15, 23, 42, 0.08),
-        0 1px 2px rgba(15, 23, 42, 0.04);
+        0 24px 48px rgba(15, 23, 42, 0.08),
+        0 2px 4px rgba(15, 23, 42, 0.04);
     }
 
     .apply-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      margin-top: 16px;
+      gap: 32px;
     }
 
     .apply-box {
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px;
+      border-radius: 16px;
+      padding: 32px;
     }
 
     .apply-box h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
+      margin: 0 0 12px;
+      font-size: 19px;
       font-weight: 600;
       color: var(--text-main);
     }
@@ -97,31 +96,45 @@
       margin: 0;
     }
 
+    /* BUTTONS – PROFESSIONAL HIERARCHY */
     .btn {
-      margin-top: 22px;
+      margin-top: 26px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 28px;
-      background: var(--brand-accent);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 10px;
+      padding: 14px 32px;
       font-size: 14px;
       font-weight: 600;
-      border: none;
+      border-radius: 12px;
       cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      text-decoration: none;
+      transition: all 0.15s ease;
     }
 
-    .btn:hover {
+    .btn.primary {
+      background: var(--brand-accent);
+      color: #ffffff;
+      box-shadow: 0 10px 24px rgba(29, 78, 216, 0.25);
+    }
+
+    .btn.primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(29, 78, 216, 0.25);
+      box-shadow: 0 14px 30px rgba(29, 78, 216, 0.35);
     }
 
-    /* Sections */
+    .btn.outline {
+      background: #ffffff;
+      color: var(--brand-accent);
+      border: 1.5px solid var(--brand-accent);
+    }
+
+    .btn.outline:hover {
+      background: #f0f5ff;
+    }
+
+    /* SECTIONS */
     .divider {
-      margin: 48px 0 32px;
+      margin: 56px 0 36px;
       height: 1px;
       background: var(--border);
     }
@@ -141,12 +154,12 @@
 
     li { margin-bottom: 6px; }
 
-    /* Share */
+    /* SHARE */
     .share-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 16px;
+      gap: 14px;
+      margin-top: 18px;
     }
 
     .btn.alt {
@@ -156,36 +169,46 @@
     }
 
     .btn.alt:hover {
-      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+      background: #eef2f7;
     }
 
     .copied {
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 13px;
       color: #15803d;
       display: none;
     }
 
+    /* FOOTER / CONTACT */
     footer {
-      margin-top: 48px;
-      padding-top: 18px;
+      margin-top: 56px;
+      padding-top: 24px;
       border-top: 1px solid var(--border);
       font-size: 13px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
     }
 
     footer a {
       color: var(--brand-accent);
       text-decoration: none;
+      font-weight: 500;
     }
 
-    /* Mobile */
+    /* MOBILE */
     @media (max-width: 720px) {
       .apply-grid {
         grid-template-columns: 1fr;
       }
 
       .panel {
-        padding: 32px;
+        padding: 36px;
+      }
+
+      .hero img {
+        height: 70px;
       }
 
       .hero h1 {
@@ -221,7 +244,7 @@
             Secure submission through Google Forms.
             Recommended for faster and more accurate review.
           </p>
-          <a class="btn" href="https://forms.gle/hUnCAfShgdWSAoSQ9" target="_blank">
+          <a class="btn primary" href="https://forms.gle/hUnCAfShgdWSAoSQ9" target="_blank">
             Apply Now
           </a>
         </div>
@@ -232,7 +255,7 @@
             Submit a link to your resume or profile.
             Please ensure access is set to “Anyone with the link can view.”
           </p>
-          <a class="btn" href="https://forms.gle/TsRFMGhJ3Ba6UNts9" target="_blank">
+          <a class="btn outline" href="https://forms.gle/TsRFMGhJ3Ba6UNts9" target="_blank">
             Apply Now
           </a>
         </div>
@@ -268,10 +291,19 @@
       <div id="copiedMsg" class="copied">Link copied to clipboard</div>
 
       <footer>
-        Contact:
-        <a href="mailto:hiring.bizbookssolutions@outlook.com">
-          hiring.bizbookssolutions@outlook.com
-        </a>
+        <span>
+          Email:
+          <a href="mailto:hiring.bizbookssolutions@outlook.com">
+            hiring.bizbookssolutions@outlook.com
+          </a>
+        </span>
+        <span>
+          WhatsApp:
+          <a href="https://wa.me/916280003434?text=Hello%20Bizbooks%20Solutions,%20I%20have%20a%20query%20regarding%20careers."
+             target="_blank">
+            +91 6280003434
+          </a>
+        </span>
       </footer>
 
     </div>
